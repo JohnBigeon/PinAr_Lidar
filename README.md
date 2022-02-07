@@ -64,10 +64,11 @@ The arduino has been tested on arduino-1.8.13 with the LIDARLite.h library for u
 #### Third-party dependencies: Packages and librairies
 XXX
 XXX
-Once the arduino code is uploaded to the board, open your Serial Monitor  and you should see something like that:
+#### First test
+Once the arduino code is uploaded to the board, open your Serial Monitor and you should see something like that:
 ```
 Welcome aboard to Air Foton-DOP, 3D positioning
-Ignition, what is my purpose for mapping ?
+Ignition, what is my purpose ?
 Test (T) ? Fast 2D (F) ? Precise 3D (P) ? nb: Emergency case (X) 
 ```
 To confirm that you have successfully integrated your board to the hardware component, use the test configuration by hitting the T and the Enter character of your keyboard in the console (No line ending). If your stepper motors perform the 180° movement in theta direction and the 90° in phi direction, WELL DONE ! In other cases, please see the section “Well-known bugs”.
@@ -80,12 +81,12 @@ Theta position (°) Phi position (°) Distance (cm)
 16.0		01.8 		225.0
 ...
 ```
-Explore different configurations
+##### Explore different configurations
 We designed four modes of configuration for our LIDAR system:
-    • The test configuration (T) where motors make a movement of 180 degrees in theta and 90 degrees in phi direction. It’s useful to check if your board and the microstepping is correctly connected.
-    • A fast cartography (F), where you measure distance from the dome according a 180-degree angle in the theta direction. 
-    • A full and precise (P for precise) cartography of space, which means 360 degrees over theta and 90 degrees over phi.
-    • The shutdown mode (X) where two steppers will return to the starting position.
+- The test configuration (T) where motors make a movement of 180 degrees in theta and 90 degrees in phi direction. It’s useful to check if your board and the microstepping is correctly connected.
+- A fast cartography (F), where you measure distance from the dome according a 180-degree angle in the theta direction. 
+- A full and precise (P for precise) cartography of space, which means 360 degrees over theta and 90 degrees over phi.
+- The shutdown mode (X) where two steppers will return to the starting position.
 These modes can be directly called by X, F,  P  or T characters in the baud of arduino.
 
 ### Python code
@@ -93,43 +94,55 @@ These modes can be directly called by X, F,  P  or T characters in the baud of a
 To provide a visual interface to our cartography, we decide to use a python interface. The reason to do that is mainly because is highly extensible [https://en.wikipedia.org/wiki/Zen_of_Python] and commonly used in Science or Engineering.
 Our python codes will command the configuration needed by sending the character X, T, F or P and read every values in the baud port. One important point to be stressed is the difficulty for matplotlib to display a figure at high speed rate, typically at more than 10 figures per second. In order to display the distance as fast as we can, we decided to use pyqtgraph packages [http://www.pyqtgraph.org/]. 
 To run these scripts, the easiest way is to create a virtual conda environment [https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html] with all packages required.
-To install theses packages, you have two option, load our environment here [link to the list_lidar_env.yml] and use the command:
-conda env create -f list_idar_env.yml
+To install theses packages, you have two option, load our environment here and use the command:
+```
+conda env create -f list_lidar_env.yml
+```
 or do it manually by:
+```
 conda create --name lidar_env python=3.7 numpy spyder matplotlib pyqtgraph pyserial tqdm
+```
 Now, you can simply activate your virtual environment by the command:
+```
 conda activate lidar_env
+```
 You also need the package “drawnow”, not available on the conda package manager. To install it, use: 
+```
 pip install drawnow
+```
 
 ## Usage
 XXX
 
 ### 2D scanning
 In your python environment, use the command:
+```
 python plot_2d_radar_vXXX.py
+```
 Here, your LIDAR is gathering distance at every angles defined by the motor in theta direction and display it in real time. To shutdown your measure, hit Ctrl+C in your console. That will close the baud and let motors going to initial positions.
 
 ### 3D scanning
 In your python environment, use the command:
+```
 plot_3d_animation_vXX.py
+```
 Here, your LIDAR is gathering distance at every angles defined by the motor in theta direction and phi direction, but save theses informations in a csv file. Once you have finished the cartography or decided to cancel it (by Ctrl + C), the cartography is displayed on a matplotlib window and on a gif in your directory file.
 
 ### Well-known bugs
 Stepper motor is not actually moving correctly.
-    • Check the connection of your motor.
-    • Increase the delay between two pulses send to motor for stepping. In Arduino code, modify the line 34:
+- Check the connection of your motor.
+- Increase the delay between two pulses send to motor for stepping. In Arduino code, modify the line 34:
       int delay_switch = 5;
 
 Noise removal and readings that are far away from mean value are removed.
 
 Monitor return return the value NACK.
-    • Check the LIDAR connection.
+- Check the LIDAR connection.
 
 Problem to upload the arduino code to your board
-    • Carefully use the good board type & port in the menu of the Arduino IDE.
+- Carefully use the good board type & port in the menu of the Arduino IDE.
 Uploading code to arduino gives me errors
-    • On fresh ubuntu installation, you may experience minor problems with fresh ubuntu installation, that can fixed following this [https://askubuntu.com/questions/1056314/uploading-code-to-arduino-gives-me-the-error-avrdude-ser-open-cant-open-d].
+- On fresh ubuntu installation, you may experience minor problems with fresh ubuntu installation, that can fixed following this [https://askubuntu.com/questions/1056314/uploading-code-to-arduino-gives-me-the-error-avrdude-ser-open-cant-open-d].
     
 ### Future improvements
 XXX
