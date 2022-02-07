@@ -1,8 +1,10 @@
 # PinAr_Lidar
 
+![3D scan](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif)
+
 <p float="left">
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif" width="500" />
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif" width="500" /> 
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif" width="400" />
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif" width="400" /> 
 </p>
 
 ## Introduction
