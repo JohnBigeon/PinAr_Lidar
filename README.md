@@ -9,11 +9,11 @@ First answer, because a dome security camera is designed to monitor a wide range
 We have developed this LIDAR as a “popular science project” within the Foton laboratory [http://foton.cnrs.fr]. This project is an integral part of “Fete de la science” [https://www.fetedelascience.fr/], a Science Festival organized in France every year. During these days, the concept is simple, open our academic labs to the public.
 
 ## Concept
-From a pedagogical perspective, let’s start with a static problem. To make a long story short, a LIDAR calculates the distance to an object using time of flight. The time-of-flight principle is based on the time difference between the emission of a signal and its return to the sensor, after being reflected by an object, as presented on figure 1. Practically speaking, when a laser is emitted from the source, this light will travel through the air until it hits an obstacle which reflects this light. In this case, the time between the emission and the reception is directly related to the distance.
+From a pedagogical perspective, let’s start with a static problem. To make a long story short, a LIDAR calculates the distance to an object using time of flight. The time-of-flight principle is based on the time difference between the emission of a signal and its return to the sensor, after being reflected by an object, as presented below. Practically speaking, when a laser light is emitted from the source, this light will travel through the air until it hits an obstacle which reflects this light. In this case, the time between the emission and the reception is directly related to the distance.
 
 ![concept](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/time_of_flight_v01.png)
 
-Now, aim this laser all around you at equally spaced intervals in both the zenithal (theta) and azimuthal ( Phi) directions and you can fully determine the distance of objects around you. This is how most of LIDAR cartography is done.
+Now, aim this laser all around you at equally spaced intervals in both the zenithal (theta) and azimuthal (Phi) directions and you can fully determine the distance of objects around you. This is how most of LIDAR cartography is done.
 
 From a practical view, the telemetry information is obtained by a Time-of-Flight Distance Sensor (VL5353LXX-V2) and the positioning in the two angular directions sweeping 360 and 180 degrees respectively is achieved by the two stepper motors of the dome system with microstepping driver (Pololu A4988).
 
@@ -31,9 +31,11 @@ In my case, a 2 axis system, not all motors are working at the same time, same l
 **Be careful**, connecting or disconnecting a stepper motor while the driver is powered can **damage** or **destroy** the driver.
 
 ### Microstepping
-The first part is to connect and interface your stepper driver (A4988) to the two stepper motors. These stepper motors are able to provide 200 steps per revolution with a resolution of 1.8 °. Based on the nice tutorial found here [https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/], the use of the A4988 stepper driver gives you higher resolution of stepping:
+The first part is to connect and interface stepper drivers (A4988) to the two stepper motors. These stepper motors are able to provide 200 steps per revolution with a resolution of 1.8°. Based on the nice tutorial found here [https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/], the use of the A4988 stepper driver gives you higher resolution of stepping:
+```
 Resolution = \Delta_{step} * X, 
-where X = 2, 4, 8 or 16. 
+where X = 2, 4, 8 or 16
+```
 The resolution of the system can be tune by MS1, MS2 and MS3 pins as follow [https://www.robotshop.com/media/files/pdf/datasheet-1182.pdf]:
 
 | MS1 | MS2 | MS3 | microstepping |
@@ -77,12 +79,12 @@ V_ref = 0.14 V
 
 ## Software
 The code is separated in two different entities: an arduino code which gives you the measured distances at every step of motors and the python code to display nice interface in real time.
-The arduino has been tested on arduino-1.8.13 with the LIDARLite.h library for ubuntu and arduino-XXX for Windows 10.
+The arduino has been tested on arduino-1.8.19 for ubuntu and *arduino-XXX* for Windows 10.
 
 ### Arduino code
 #### Third-party dependencies: Packages and librairies
-XXX
-XXX
+Use the Library Manager to install the library *VL53L0X by Pololu (version 1.3.0)* [https://github.com/pololu/vl53l0x-arduino] on the  Arduino Software (IDE)
+
 #### First test
 Once the arduino code is uploaded to the board, open your Serial Monitor and you should see something like that:
 ```
