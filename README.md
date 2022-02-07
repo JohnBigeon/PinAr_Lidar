@@ -30,16 +30,17 @@ Resolution = \Delta_{step} * X,
 where X = 2, 4, 8 or 16. 
 The resolution of the system can be tune by MS1, MS2 and MS3 pins as follow [https://www.robotshop.com/media/files/pdf/datasheet-1182.pdf]:
 
+| MS1 | MS2 | MS3 | microstepping |
+|     :---:      |     :---:      |     :---:      |     :---:      |
+| Low | Low | Low | 1/1 step |
+| High | Low | Low | 1/2 step |
+| Low | High | Low | 1/4 step |
+| Low | Low | High | ??? step |
+| High | High | Low | 1/8 step |
+| High | High | High | 1/16 step |
 
- MS1   MS2   MS3
------------------
- low   low   low   Full step
- high  low   low   Half step
- low   high  low   1/4 step
- high  high  low   1/8 step
- high  high  high  1/16 step
- 
- As an example, when MS1 and MS2 are connected and not the MS3, the stepping step will be multiply by a factor 8.
+
+As an example, when MS1 and MS2 are connected and not the MS3, the stepping step will be multiply by a factor 8.
  
 ### Wiring
 Concerning the circuit, the 1A and 1B pins will be connected to the first coil of the motor and the 2A and 2B pins to the second as described on the figure XXX. In our case, we don't have any information about the connections to these motors, we used the famous “trial-and-error” approach to connect the 4 pins to the arduino board.
