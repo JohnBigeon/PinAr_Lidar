@@ -62,6 +62,14 @@ As an example, when MS1 and MS2 are connected and not the MS3, the stepping step
 ### Wiring
 Concerning the circuit, the 1A and 1B pins will be connected to the first coil of the motor and the 2A and 2B pins to the second as described on the figure XXX. ~~In our case, we don't have any information about the connections to these motors, we used the famous “trial-and-error” approach to connect the 4 pins to the arduino board.~~
 To protect the microstepper driver from voltages spikes, a capacitor (100 µF) is used here. The pin of step and direction of the first stepper driver are connected to the 3 and 4 pins of the Arduino board. For the second stepper driver, they are connected to pins 6 and 7. For both of them, the reset and sleep pins are need to be pulled high (default low are to reset and sleep). Finally, the sensors is directly connected to SCL and SDA pins.
+```
+Arduino   VL53L0X board
+-------   -------------
+    3V3 - VIN
+    GND - GND
+    SDA - SDA
+    SCL - SCL
+```
 
 ![fritzing](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Fritzing_files/double_stepper_motor_Arduino_v03_bb.png)
 
