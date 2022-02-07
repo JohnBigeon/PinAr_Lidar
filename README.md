@@ -11,7 +11,8 @@ Second answer, and maybe the best one, this dome was destined for the trash can.
 
 ## Concept
 From a pedagogical perspective, let’s start with a static problem. To make a long story short, a LIDAR calculates the distance to an object using time of flight. The time-of-flight principle is based on the time difference between the emission of a signal and its return to the sensor, after being reflected by an object, as presented on figure 1. Practically speaking, when a laser is emitted from the source, this light will travel through the air until it hits an obstacle which reflects this light. In this case, the time between the emission and the reception is directly related to the distance.
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+
+![concept](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/time_of_flight_v01.png)
 
 ## Hardware & Integration
 XXX
