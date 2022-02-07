@@ -1,5 +1,9 @@
 # PinAr_Lidar
-![2D_scan](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif) ![2D_scan](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif)
+
+<p float="left">
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif" width="500" />
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif" width="500" /> 
+</p>
 
 ## Introduction
 Here, we will build/assemble a Laser imaging, detection, and ranging (LIDAR) [https://en.wikipedia.org/wiki/Lidar] from a CCTV dome camera setup and a Time-of-Flight Distance Sensor to make 2D/3D cartography.
