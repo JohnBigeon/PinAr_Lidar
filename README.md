@@ -14,6 +14,10 @@ From a pedagogical perspective, let’s start with a static problem. To make a l
 
 ![concept](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/time_of_flight_v01.png)
 
+Now, aim this laser all around you at equally spaced intervals in both the zenithal (theta) and azimuthal ( Phi) directions and you can fully determine the distance of objects around you. This is how most of LIDAR cartography is done.
+
+From a practical view, the telemetry information is obtained by a Time-of-Flight Distance Sensor (VL5353LXX-V2) and the positioning in the two angular directions sweeping 360 and 180 degrees respectively is achieved by the two stepper motors of the dome system with microstepping driver (Pololu A4988).
+
 ## Hardware & Integration
 XXX
 
