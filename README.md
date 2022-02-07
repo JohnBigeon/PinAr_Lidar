@@ -83,7 +83,7 @@ The arduino has been tested on arduino-1.8.19 for ubuntu and *arduino-XXX* for W
 
 ### Arduino code
 #### Third-party dependencies: Packages and librairies
-Use the Library Manager to install the library *VL53L0X by Pololu (version 1.3.0)* [https://github.com/pololu/vl53l0x-arduino] on the  Arduino Software (IDE)
+Use the Library Manager to install the library *VL53L0X by Pololu (version 1.3.0)* [https://github.com/pololu/vl53l0x-arduino] on the  Arduino Software (IDE).
 
 #### First test
 Once the arduino code is uploaded to the board, open your Serial Monitor and you should see something like that:
@@ -140,12 +140,12 @@ In your python environment, use the command:
 ```
 python plot_2d_radar_vXXX.py
 ```
-Here, your LIDAR is gathering distance at every angles defined by the motor in theta direction and display it in real time. To shutdown your measure, hit Ctrl+C in your console. That will close the baud and let motors going to initial positions.
+Here, your LIDAR is gathering distance at every angles defined by the motor in theta direction and display it in real time. To **shutdown** your measure, hit **Ctrl+C** in your console. That will close the baud and let motors going to initial positions.
 
 ### 3D scanning
 In your python environment, use the command:
 ```
-plot_3d_animation_vXX.py
+python plot_3d_animation_vXX.py
 ```
 Here, your LIDAR is gathering distance at every angles defined by the motor in theta direction and phi direction, but save theses informations in a csv file. Once you have finished the cartography or decided to cancel it (by Ctrl + C), the cartography is displayed on a matplotlib window and on a gif in your directory file.
 
