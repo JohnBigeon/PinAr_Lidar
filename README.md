@@ -27,7 +27,7 @@ XXX
 ### Wiring
 XXX
 
-![fritzing](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Fritzing_files/double_stepper_motor_Arduino_v03_bb.pdf)
+![fritzing](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Fritzing_files/double_stepper_motor_Arduino_v03_bb.png)
 
 
 
