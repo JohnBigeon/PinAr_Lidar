@@ -22,11 +22,13 @@ XXX
 
 ### Power supply
 Stepper drivers are power converters, you need to do the calculation in terms of power consumption, not current as explained here [https://forum.arduino.cc/t/what-powersupply-do-i-need-to-power-multiple-stepper-motors/868595/9]. The motors are 1.5A and 2.4 ohms, so use I-squared-R power law:
-1.5x1.5x2.4 = 5.4W. 
+```
+P = R IxI = 1.5x1.5x2.4 = 5.4W (per motor)
+```
 Here, we are using two stepper motors, the power supply needs to be at least 2 x 5.4 = 10.8 W.
 Higher voltage supply allows for faster operation of the steppers, 24V is a commonly chosen supply voltage for a reasonable compromise. If you chose 12V supply, 1.5 A would be appropriate.
 In my case, a 2 axis system, not all motors are working at the same time, same load, meaning that the power value can be lower.
-Be careful, connecting or disconnecting a stepper motor while the driver is powered can damage or destroy the driver.
+**Be careful**, connecting or disconnecting a stepper motor while the driver is powered can **damage** or **destroy** the driver.
 
 ### Microstepping
 The first part is to connect and interface your stepper driver (A4988) to the two stepper motors. These stepper motors are able to provide 200 steps per revolution with a resolution of 1.8 °. Based on the nice tutorial found here [https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/], the use of the A4988 stepper driver gives you higher resolution of stepping:
@@ -47,9 +49,8 @@ The resolution of the system can be tune by MS1, MS2 and MS3 pins as follow [htt
 As an example, when MS1 and MS2 are connected and not the MS3, the stepping step will be multiply by a factor 8.
  
 ### Wiring
-Concerning the circuit, the 1A and 1B pins will be connected to the first coil of the motor and the 2A and 2B pins to the second as described on the figure XXX. In our case, we don't have any information about the connections to these motors, we used the famous “trial-and-error” approach to connect the 4 pins to the arduino board.
-The pin of step and direction of the first stepper driver are connected to the 3 and 4 pins of the Arduino board. For the second stepper driver, they are connected to pins 6 and 7. Finally, the reset and sleep pins are need to be pulled high (default low are to reset and sleep).
-In our case, MS1, MS2 and MS3 pins are in High mode, thereby for a motion of 360 degrees with our dome, sending of 200x16 pulses into the Step Pin is required.
+Concerning the circuit, the 1A and 1B pins will be connected to the first coil of the motor and the 2A and 2B pins to the second as described on the figure XXX. ~~In our case, we don't have any information about the connections to these motors, we used the famous “trial-and-error” approach to connect the 4 pins to the arduino board.~~
+To protect the microstepper driver from voltages spikes, a capacitor (100 µF) is used here. The pin of step and direction of the first stepper driver are connected to the 3 and 4 pins of the Arduino board. For the second stepper driver, they are connected to pins 6 and 7. For both of them, the reset and sleep pins are need to be pulled high (default low are to reset and sleep). Finally, the sensors is directly connected to SCL and SDA pins.
 
 ![fritzing](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Fritzing_files/double_stepper_motor_Arduino_v03_bb.png)
 
@@ -62,10 +63,17 @@ In our case, MS1, MS2 and MS3 pins are in High mode, thereby for a motion of 360
 To prevent overheating of your motors (and then, their durability), it is necessary to ensure that there are an adequate current limitation on your A4988 boards. All explanations can be found in the video [https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/].
 This stepper driver allows tuning of the maximum current as explained here [https://www.rototron.info/raspberry-pi-stepper-motor-tutorial/] or here [https://lastminuteengineers.com/a4988-stepper-motor-driver-arduino-tutorial/] in order to protect your board of destructive voltage spikes.
 My protocol is:
-Set the current limit by measuring the voltage (Vref) on the “ref” pin and the microstep pins disconnected. Take a look at the datasheet for your stepper motor and specially the rated current. In our case we are using NEMA 17 200 steps/rev, 12V 350mA.
-Measure the voltage (Vref) on the metal trimmer pot itself while you adjust it. Adjust the Vref voltage using the formula:
+- Set the current limit by measuring the voltage (Vref) on the “ref” pin and the microstep pins disconnected. 
+- Take a look at the datasheet for your stepper motor and specially the rated current. In our case we are using NEMA 17 200 steps/rev, 12V 350mA.
+- Measure the voltage (Vref) on the metal trimmer pot itself while you adjust it. 
+- Adjust the Vref voltage using the formula:
+```
 Current Limit = Vref x 2.5
+```
 In our case, the motor is rated for 350mA, and the reference voltage is fixed to 0.14 V.
+```
+V_ref = 0.14 V
+```
 
 ## Software
 The code is separated in two different entities: an arduino code which gives you the measured distances at every step of motors and the python code to display nice interface in real time.
