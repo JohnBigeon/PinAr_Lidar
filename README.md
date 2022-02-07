@@ -27,6 +27,10 @@ XXX
 ### Wiring
 XXX
 
+![fritzing](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Fritzing/double_stepper_motor_Arduino_v03_bb.pdf)
+
+
+
 ### Microstepping
  MS1   MS2   MS3
 -----------------
