@@ -63,9 +63,29 @@ As an example, when MS1 and MS2 are connected and not the MS3, the stepping step
 Concerning the circuit, the 1A and 1B pins will be connected to the first coil of the motor and the 2A and 2B pins to the second as described on the figure XXX. ~~In our case, we don't have any information about the connections to these motors, we used the famous “trial-and-error” approach to connect the 4 pins to the arduino board.~~
 To protect the microstepper driver from voltages spikes, a capacitor (100 µF) is used here. The pin of step and direction of the first stepper driver are connected to the 3 and 4 pins of the Arduino board. For the second stepper driver, they are connected to pins 6 and 7. For both of them, the reset and sleep pins are need to be pulled high (default low are to reset and sleep). Finally, the sensors is directly connected to SCL and SDA pins.
 ```
-Arduino   VL53L0X board
+Arduino   A4988 board
 -------   -------------
-    3V3 - VIN
+    5V  - VDD
+    GND - GND
+   PWM6 - MS1
+   PWM7 - MS2
+   PWM5 - STEP
+   DG37 - DIR
+```
+```
+Arduino   A4988 board
+-------   -------------
+    5V  - VDD
+    GND - GND
+   PWM2 - MS1
+   PWM3 - MS2
+   PWM4 - STEP
+   DG47 - DIR
+```
+```
+Arduino   VL53LXX-V2 board
+-------   -------------
+    5V  - VIN
     GND - GND
     SDA - SDA
     SCL - SCL
