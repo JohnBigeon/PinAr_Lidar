@@ -255,20 +255,23 @@ python plot_3d_animation_vXX.py
 Here, your LIDAR is gathering distance at every angles defined by the motor in theta direction and phi direction, but save theses informations in a csv file. Once you have finished the cartography or decided to cancel it (by Ctrl + C), the cartography is displayed on a matplotlib window and on a gif in your directory file.
 
 ### Well-known bugs
-Stepper motor is not actually moving correctly.
+#### Stepper motor is not actually moving correctly.
 - Check the connection of your motor.
 - Increase the delay between two pulses send to motor for stepping. In Arduino code, modify the line 34:
-      int delay_switch = 5;
+      int delay_switch = 1000;
+- Use *delayMicroseconds()* and not *delay()* between the two pulses
 
-Noise removal and readings that are far away from mean value are removed.
+#### Noise removal and readings that are far away from mean value are removed
+TODO
 
-Monitor return return the value NACK.
+#### Monitor return return the value NACK.
 - Check the LIDAR connection.
 
-Problem to upload the arduino code to your board
+#### Problem to upload the arduino code to your board
 - Carefully use the good board type & port in the menu of the Arduino IDE.
-Uploading code to arduino gives me errors
+
+##### Uploading code to arduino gives me errors
 - On fresh ubuntu installation, you may experience minor problems with fresh ubuntu installation, that can fixed following this [https://askubuntu.com/questions/1056314/uploading-code-to-arduino-gives-me-the-error-avrdude-ser-open-cant-open-d].
     
 ### Future improvements
-XXX
+TODO
