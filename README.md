@@ -264,7 +264,7 @@ Here, your LIDAR is gathering distance at every angles defined by the motor in t
 #### Noise removal and readings that are far away from mean value are removed
 TODO
 
-#### Monitor return return the value NACK.
+#### Monitor return return the value NACK
 - Check the LIDAR connection.
 
 #### Problem to upload the arduino code to your board
