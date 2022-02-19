@@ -81,8 +81,8 @@ A4988 (#1)   Arduino   Power supply
        GND -         - GND
        VDD - 5V
        GND - GND
-       MS1 - DG46
-       MS2 - DG44
+       MS1 - DG44
+       MS2 - DG46
       STEP - PWM5
        DIR - PWM6
 ```
@@ -95,8 +95,8 @@ A4988 (#2)   Arduino   Power supply
        GND - GND
        MS1 - DG26
        MS2 - DG24
-      STEP - PWM4
-       DIR - PWM5
+      STEP - PWM3
+       DIR - PWM4
 ```
 ```
 Arduino   VL53LXX-V2 board
@@ -109,9 +109,9 @@ Arduino   VL53LXX-V2 board
 
 ![fritzing](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Fritzing_files/double_stepper_motor_Arduino_v03_bb.png)
 
-![KiCad](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/KiCad_files/20220203_kicad_schematic_screenshot.png)
+![KiCad](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/KiCad_files/20220219_kicad_schematic_screenshot.png)
 
-![PCB](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/KiCad_files/20220203_kicad_pcb.png)
+![PCB](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/KiCad_files/20220219_kicad_pcb.png)
 
  
 #### Set max current
