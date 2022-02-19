@@ -27,7 +27,6 @@ Now, aim this laser all around you at equally spaced intervals in both the zenit
 From a practical view, the telemetry information is obtained by a Time-of-Flight Distance Sensor (VL5353LXX-V2) and the positioning in the two angular directions sweeping 360 and 180 degrees respectively is achieved by the two stepper motors of the dome system with microstepping driver (Pololu A4988).
 
 ## Hardware & Integration
-XXX
 
 ### Power supply
 Stepper drivers are power converters, you need to do the calculation in terms of power consumption, not current as explained here [https://forum.arduino.cc/t/what-powersupply-do-i-need-to-power-multiple-stepper-motors/868595/9]. The motors are 1.5A and 2.4 ohms, so use I-squared-R power law:
