@@ -183,7 +183,7 @@ Be sure after few minutes, the motor is not too hot and no steps are missing dur
 
 
 ## Software
-The code is separated in two different entities: an arduino code which gives you the measured distances at every step of motors and the python code to display nice interface in real time.
+The code is separated in two different entities: an arduino code which gives you the measured distances at every step of motors and the python code to display a pretty interface in real time.
 The arduino has been tested on arduino-1.8.19 for ubuntu and *arduino-XXX* for Windows 10.
 
 ### Arduino code
