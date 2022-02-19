@@ -53,7 +53,7 @@ In my case, a 2 axis system, not all motors are working at the same time, same l
 ### Microstepping
 <p float="center">
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_pololu_A4988.jpg" width="400" />
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_schematic.pdf" width="400" />
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_schematic.png" width="400" />
 </p>
 
 The first part is to connect and interface stepper drivers (A4988) to the two stepper motors. These stepper motors are able to provide 200 steps per revolution with a resolution of 1.8°. Based on the nice tutorial found here [https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/], the use of the A4988 stepper driver gives you higher resolution of stepping.
