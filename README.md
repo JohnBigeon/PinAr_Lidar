@@ -40,14 +40,10 @@ In my case, a 2 axis system, not all motors are working at the same time, same l
 **Be careful**, connecting or disconnecting a stepper motor while the driver is powered can **damage** or **destroy** the driver.
 
 ### Microstepping
-The first part is to connect and interface stepper drivers (A4988) to the two stepper motors. These stepper motors are able to provide 200 steps per revolution with a resolution of 1.8°. Based on the nice tutorial found here [https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/], the use of the A4988 stepper driver gives you higher resolution of stepping:
-```
-Resolution = \Delta_{step} * X, 
-where X = 2, 4, 8 or 16
-```
+The first part is to connect and interface stepper drivers (A4988) to the two stepper motors. These stepper motors are able to provide 200 steps per revolution with a resolution of 1.8°. Based on the nice tutorial found here [https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/], the use of the A4988 stepper driver gives you higher resolution of stepping.
 The resolution of the system can be tune by MS1, MS2 and MS3 pins as follow [https://www.robotshop.com/media/files/pdf/datasheet-1182.pdf]:
 
-| MS1 | MS2 | MS3 | microstepping |
+| MS1 | MS2 | MS3 | Microstepping |
 |     :---:      |     :---:      |     :---:      |     :---:      |
 | Low | Low | Low | 1/1 step |
 | High | Low | Low | 1/2 step |
@@ -69,9 +65,10 @@ A4988 (#1)   Arduino   Power supply
        GND -         - GND
        VDD - 5V
        GND - GND
-       MS1 - PWM6
-       MS2 - PWM7
-      STEP - DG37
+       MS1 - DG46
+       MS2 - DG44
+      STEP - PWM5
+       DIR - PWM6
 ```
 ```
 A4988 (#2)   Arduino   Power supply
@@ -80,9 +77,10 @@ A4988 (#2)   Arduino   Power supply
        GND -         - GND
        VDD - 5V
        GND - GND
-       MS1 - PWM2
-       MS2 - PWM3
-      STEP - DG47
+       MS1 - DG26
+       MS2 - DG24
+      STEP - PWM4
+       DIR - PWM5
 ```
 ```
 Arduino   VL53LXX-V2 board
