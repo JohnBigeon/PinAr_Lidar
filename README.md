@@ -124,7 +124,8 @@ In our case, the motor is rated for 350mA, and the reference voltage is fixed to
 V_ref = 0.14 V
 ```
 
-Simple test to control Stepper Motor and spin Direction
+### Simple test to control Stepper Motor and spin Direction
+Arduino code (see 'Rotation_stepper_simple' folder):
 ```
 //==============================================================================
 //title              :one_stepper_rotation_v01.ino
