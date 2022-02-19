@@ -193,7 +193,7 @@ Use the Library Manager to install the library *VL53L0X by Pololu (version 1.3.0
 #### First test
 Once the arduino code is uploaded to the board, open your Serial Monitor and you should see something like that:
 ```
-Welcome aboard to Air Foton-DOP, 3D positioning
+Welcome aboard to Air PinAr_Lidar, 3D positioning
 Ignition, what is my purpose ?
 Test (T) ? Fast 2D (F) ? Precise 3D (P) ? nb: Emergency case (X) 
 ```
