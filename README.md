@@ -197,7 +197,7 @@ Welcome aboard to Air PinAr_Lidar, 3D positioning
 Ignition, what is my purpose ?
 Test (T) ? Fast 2D (F) ? Precise 3D (P) ? nb: Emergency case (X) 
 ```
-To confirm that you have successfully integrated your board to the hardware component, use the test configuration by hitting the T and the Enter character of your keyboard in the console (No line ending). If your stepper motors perform the 180° movement in theta direction and the 90° in phi direction, WELL DONE ! In other cases, please see the section “Well-known bugs”.
+To confirm that you have successfully integrated your board to the hardware component, use the test configuration by hitting the T and Enter characters of your keyboard in the console (No line ending). If your stepper motors perform the 180° movement in theta direction and the 90° in phi direction, WELL DONE ! In other cases, please see the section “Well-known bugs”.
 
 Here, the position of each stepper motors is converted in spherical coordinate system (theta and phi). Every lines sent from the Arduino to serial monitor consists of phi and theta positions and distance.
 So, during this test, you may have seen in the monitor, information about angle positions and distance as:
