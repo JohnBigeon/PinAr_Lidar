@@ -29,12 +29,14 @@ From a practical view, the telemetry information is obtained by a Time-of-Flight
 ## Hardware & Integration
 ### Price
 ```
-Object            Price (€)
+         Object           Price (€)
 -----------------------   -----
             Arduino MEGA - 18
          Rotation system - 0 
             Pololu A4988 - 3.50
  AZDelivery VL5353LXX-V2 - 9
+    Capacitors ( 100 µF) - 1
+                  Cables - 1
 ```
 
 ### Power supply
