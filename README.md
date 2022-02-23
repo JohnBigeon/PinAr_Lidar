@@ -48,16 +48,35 @@ From a practical view, the telemetry information is obtained by a Time-of-Flight
 ### Motors
 <p float="left">
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/stepper_motors_image.jpg" width="400" />
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/stepper_motors_resistance_coil.jpg" width="400" /> 
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/documentation_stepper_v02-0.png" width="400" /> 
 </p>
+#### Coil resistance
+To confirm the documentation, we can first check the coil resistance simply by measuring the resistance across any two wires. As visible here, the Blue and Green wires are associated and if you try any other pairs, you should read the famous 'OL' Infinite resistance (open circuit).
 <p float="center">
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/documentation_stepper_v02-0.png" width="600" />
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/stepper_motors_resistance_coil.jpg" width="600" />
 </p>
 
 ### Power supply
-Stepper drivers are power converters, you need to do the calculation in terms of power consumption, not current as explained here [https://forum.arduino.cc/t/what-powersupply-do-i-need-to-power-multiple-stepper-motors/868595/9]. The motors are 1.5A and 2.4 ohms, so use I-squared-R power law:
+Stepper drivers are power converters, you need to do the calculation in terms of power consumption, not current as explained here [https://forum.arduino.cc/t/what-powersupply-do-i-need-to-power-multiple-stepper-motors/868595/9]. 
+
+The motors are 0.4 A and 24 ohms, so use I-squared-R power law:
 ```
-P = R IxI = 1.5x1.5x2.4 = 5.4W (per motor)
+P = R IxI = 0.4x0.4x24 = 230W (per motor/per phase)
+```
+A too high power consumption in my case. Then, we decided to replace this stepper motor by a standard nema 17 with the following specifications:
+```
+Model 17HS08-1104S
+Holding Torque 13 N.cm
+Rated voltage
+Shaft Single
+Step Angle 1.8 deg
+Motor length 20 mmm
+Rated current 1.0 A
+Inductance 	4.5±20% mH 
+```
+The motors are 1.5 A and 2.4 ohms, so use I-squared-R power law:
+```
+P = R IxI = 1.5x1.5x2.4 = 5.4W (per motor/ per phase)
 ```
 Here, we are using two stepper motors, the power supply needs to be at least 2 x 5.4 = 10.8 W.
 Higher voltage supply allows for faster operation of the steppers, 24V is a commonly chosen supply voltage for a reasonable compromise. If you chose 12V supply, 1.5 A would be appropriate.
