@@ -27,6 +27,12 @@ Now, aim this laser all around you at equally spaced intervals in both the zenit
 From a practical view, the telemetry information is obtained by a Time-of-Flight Distance Sensor (VL5353LXX-V2) and the positioning in the two angular directions sweeping 360 and 180 degrees respectively is achieved by the two stepper motors of the dome system with microstepping driver (Pololu A4988).
 
 ## Hardware & Integration
+### Dome security camera
+<p float="left">
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif" width="400" />
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif" width="400" /> 
+</p>
+
 ### Price
 ```
          Object           Price (€)
