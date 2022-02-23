@@ -50,7 +50,8 @@ From a practical view, the telemetry information is obtained by a Time-of-Flight
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/stepper_motors_image.jpg" width="400" />
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/documentation_stepper_v02-0.png" width="400" /> 
 </p>
-#### Coil resistance
+
+##### Coil resistance
 To confirm the documentation, we can first check the coil resistance simply by measuring the resistance across any two wires. As visible here, the Blue and Green wires are associated and if you try any other pairs, you should read the famous 'OL' Infinite resistance (open circuit).
 <p float="center">
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/stepper_motors_resistance_coil.jpg" width="600" />
