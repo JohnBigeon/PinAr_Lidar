@@ -29,8 +29,8 @@ From a practical view, the telemetry information is obtained by a Time-of-Flight
 ## Hardware & Integration
 ### Dome security camera
 <p float="left">
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif" width="400" />
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif" width="400" /> 
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/picture_dome_step_01.jpg" width="400" />
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/picture_dome_step_03.jpg" width="400" /> 
 </p>
 
 ### Price
@@ -45,6 +45,14 @@ From a practical view, the telemetry information is obtained by a Time-of-Flight
     Capacitors ( 100 µF) - 1
                   Cables - 1
 ```
+### Motors
+<p float="left">
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/stepper_motors_image.jpg" width="400" />
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/stepper_motors_resistance_coil.jpg" width="400" /> 
+</p>
+<p float="center">
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/documentation_stepper_v02-0.png" width="600" />
+</p>
 
 ### Power supply
 Stepper drivers are power converters, you need to do the calculation in terms of power consumption, not current as explained here [https://forum.arduino.cc/t/what-powersupply-do-i-need-to-power-multiple-stepper-motors/868595/9]. The motors are 1.5A and 2.4 ohms, so use I-squared-R power law:
@@ -60,6 +68,9 @@ In my case, a 2 axis system, not all motors are working at the same time, same l
 <p float="center">
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_pololu_A4988.jpg" width="400" />
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_schematic.png" width="400" />
+</p>
+<p float="center">
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_wiring.png" width="600" />
 </p>
 
 The first part is to connect and interface stepper drivers (A4988) to the two stepper motors. These stepper motors are able to provide 200 steps per revolution with a resolution of 1.8°. Based on the nice tutorial found here [https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/], the use of the A4988 stepper driver gives you higher resolution of stepping.
