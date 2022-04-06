@@ -92,8 +92,7 @@ The resolution of the system can be tune by MS1, MS2 and MS3 pins as follow [htt
 As an example, when MS1 and MS2 are connected and not the MS3, the stepping step will be multiply by a factor 8.
  
 ### Wiring
-Concerning the circuit, the 1A and 1B pins will be connected to the first coil of the motor and the 2A and 2B pins to the second as described on the figure XXX. ~~In our case, we don't have any information about the connections to these motors, we used the famous “trial-and-error” approach to connect the 4 pins to the arduino board.~~
-To protect the microstepper driver from voltages spikes, a capacitor (100 µF) is used here. The pin of step and direction of the first stepper driver are connected to the 3 and 4 pins of the Arduino board. For the second stepper driver, they are connected to pins 6 and 7. For both of them, the reset and sleep pins are need to be pulled high (default low are to reset and sleep). Finally, the sensors is directly connected to SCL and SDA pins.
+Concerning the circuit, the 1A and 1B pins will be connected to the first coil of the motor and the 2A and 2B pins to the second. To protect the microstepper driver from voltages spikes, a capacitor (100 µF) is used here. The pin of step and direction of the first stepper driver are connected to the 3 and 4 pins of the Arduino board. For the second stepper driver, they are connected to pins 6 and 7. For both of them, the reset and sleep pins are need to be pulled high (default low are to reset and sleep). Finally, the sensors is directly connected to SCL and SDA pins.
 ```
 A4988 (#1)   Arduino   Power supply
 ----------   -------   ------------
@@ -127,11 +126,11 @@ Arduino   VL53LXX-V2 board
     SCL - SCL
 ```
 
-![fritzing](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Fritzing_files/double_stepper_motor_Arduino_v03_bb.png)
+![fritzing](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Fritzing_files/double_stepper_motor_Arduino.png)
 
-![KiCad](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/KiCad_files/20220219_kicad_schematic_screenshot.png)
+![KiCad](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/KiCad_files/kicad_schematic.png)
 
-![PCB](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/KiCad_files/20220219_kicad_pcb.png)
+![PCB](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/KiCad_files/kicad_pcb.png)
 
 ##### Coil resistance
 To confirm the wiring and specially 2B/2A/1A/AB, we can check the coil resistance simply by measuring the resistance across any two wires. As visible here, the Blue and Green wires are associated and if you try any other pairs, you should read the famous 'OL' Infinite resistance (open circuit).
