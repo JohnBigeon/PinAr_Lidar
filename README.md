@@ -157,7 +157,14 @@ V_ref = 0.4 / 2.5 =  0.16 V
 ```
 Generally, if the motors are noisy, too hot while stepping or missing steps that means the current limiting is set incorrectly. 
 
+### Reduction gear
+This dome use a reduction gear and the big gear has six times the diameter of the small one (giving a 6:1 ratio). In our case, a full rotation (360°) is equal to
+````
+360 steps = 360 / resolution * gear = 360 / 0.9 * 6 = 2400
+````
+
 ### Simple test to control Stepper Motor and spin Direction
+This code will also help you to fix the delay during the stepping process.
 Arduino code (see 'Rotation_stepper_simple' folder):
 ```
 //==============================================================================
@@ -175,7 +182,7 @@ Arduino code (see 'Rotation_stepper_simple' folder):
 
 const int dirPin = 6;
 const int stepPin = 5;
-const int stepsPerRevolution = 200;
+const int stepsPerRevolution = 2400;
  
 void setup()
 {
