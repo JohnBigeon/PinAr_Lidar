@@ -54,28 +54,17 @@ From a practical view, the telemetry information is obtained by a Time-of-Flight
 ### Power supply
 Stepper drivers are power converters, you need to do the calculation in terms of power consumption, not current as explained here [https://forum.arduino.cc/t/what-powersupply-do-i-need-to-power-multiple-stepper-motors/868595/9]. 
 
-The motors are 0.4 A and 24 ohms, so use I-squared-R power law:
+The motors are 0.4 A and 24 ohms, so use the power law:
 ```
-P = R IxI = 0.4x0.4x24 = 230W (per motor/per phase)
+P = UxI = 5x0.4 = 2W (per motor/per phase)
 ```
-A too high power consumption in my case. Then, we decided to replace this stepper motor by a standard nema 17 with the following specifications:
-```
-Model 17HS08-1104S
-Holding Torque 13 N.cm
-Rated voltage
-Shaft Single
-Step Angle 1.8 deg
-Motor length 20 mmm
-Rated current 1.0 A
-Inductance 	4.5±20% mH 
-```
-The motors are 1.5 A and 2.4 ohms, so use I-squared-R power law:
-```
-P = R IxI = 1.5x1.5x2.4 = 5.4W (per motor/ per phase)
-```
-Here, we are using two stepper motors, the power supply needs to be at least 2 x 5.4 = 10.8 W.
+Here, we are using two stepper motors, the power supply needs to be at least:
+````
+P_tot = 2 motors * 2 phase * 2W (per motor/per phase) = 8 W
+````
+Considering the fact that the motors will not always run in parallel, the power consumption is acceptable in our case. In other words, in a 2 axis system, not all motors are working at the same time, same load, meaning that the power value can be lower.
 Higher voltage supply allows for faster operation of the steppers, 24V is a commonly chosen supply voltage for a reasonable compromise. If you chose 12V supply, 1.5 A would be appropriate.
-In my case, a 2 axis system, not all motors are working at the same time, same load, meaning that the power value can be lower.
+
 **Be careful**, connecting or disconnecting a stepper motor while the driver is powered can **damage** or **destroy** the driver.
 
 ### Microstepping
