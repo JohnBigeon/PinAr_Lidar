@@ -13,7 +13,7 @@
 
 const int dirPin = 6;
 const int stepPin = 5;
-const int stepsPerRevolution = 200;
+const int stepsPerRevolution = 2400;
  
 void setup()
 {
