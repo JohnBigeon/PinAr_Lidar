@@ -51,12 +51,6 @@ From a practical view, the telemetry information is obtained by a Time-of-Flight
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/documentation_stepper_v02-0.png" width="400" /> 
 </p>
 
-##### Coil resistance
-To confirm the documentation, we can first check the coil resistance simply by measuring the resistance across any two wires. As visible here, the Blue and Green wires are associated and if you try any other pairs, you should read the famous 'OL' Infinite resistance (open circuit).
-<p float="center">
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/stepper_motors_resistance_coil.jpg" width="600" />
-</p>
-
 ### Power supply
 Stepper drivers are power converters, you need to do the calculation in terms of power consumption, not current as explained here [https://forum.arduino.cc/t/what-powersupply-do-i-need-to-power-multiple-stepper-motors/868595/9]. 
 
@@ -150,6 +144,11 @@ Arduino   VL53LXX-V2 board
 
 ![PCB](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/KiCad_files/20220219_kicad_pcb.png)
 
+##### Coil resistance
+To confirm the wiring and specially 2B/2A/1A/AB, we can first check the coil resistance simply by measuring the resistance across any two wires. As visible here, the Blue and Green wires are associated and if you try any other pairs, you should read the famous 'OL' Infinite resistance (open circuit).
+<p float="center">
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/stepper_motors_resistance_coil.jpg" width="600" />
+</p>
  
 #### Set max current
 To prevent overheating of your motors (and then, their durability), it is necessary to ensure that there are an adequate current limitation on your A4988 boards. All explanations can be found in the video [https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/].
