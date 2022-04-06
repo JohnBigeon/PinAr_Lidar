@@ -54,9 +54,9 @@ From a practical view, the telemetry information is obtained by a Time-of-Flight
 ### Power supply
 Stepper drivers are power converters, you need to do the calculation in terms of power consumption, not current as explained here [https://forum.arduino.cc/t/what-powersupply-do-i-need-to-power-multiple-stepper-motors/868595/9]. 
 
-The motors are 0.4 A and 24 ohms, so use the power law:
+Using the power law:
 ```
-P = UxI = 5x0.4 = 2W (per motor/per phase)
+P = U x I = 5 x 0.4 = 2 W (per motor/per phase)
 ```
 Here, we are using two stepper motors, the power supply needs to be at least:
 ````
@@ -76,7 +76,7 @@ Higher voltage supply allows for faster operation of the steppers, 24V is a comm
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_wiring.png" width="600" />
 </p>
 
-The first part is to connect and interface stepper drivers (A4988) to the two stepper motors. These stepper motors are able to provide 200 steps per revolution with a resolution of 1.8°. Based on the nice tutorial found here [https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/], the use of the A4988 stepper driver gives you higher resolution of stepping.
+The first part is to connect and interface stepper drivers (A4988) to the two stepper motors. These stepper motors are able to provide 400 steps per revolution with a resolution of 0.9°. Based on the nice tutorial found here [https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/], the use of the A4988 stepper driver gives you higher resolution of stepping.
 The resolution of the system can be tune by MS1, MS2 and MS3 pins as follow [https://www.robotshop.com/media/files/pdf/datasheet-1182.pdf]:
 
 | MS1 | MS2 | MS3 | Microstepping |
@@ -134,7 +134,7 @@ Arduino   VL53LXX-V2 board
 ![PCB](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/KiCad_files/20220219_kicad_pcb.png)
 
 ##### Coil resistance
-To confirm the wiring and specially 2B/2A/1A/AB, we can first check the coil resistance simply by measuring the resistance across any two wires. As visible here, the Blue and Green wires are associated and if you try any other pairs, you should read the famous 'OL' Infinite resistance (open circuit).
+To confirm the wiring and specially 2B/2A/1A/AB, we can check the coil resistance simply by measuring the resistance across any two wires. As visible here, the Blue and Green wires are associated and if you try any other pairs, you should read the famous 'OL' Infinite resistance (open circuit).
 <p float="center">
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/stepper_motors_resistance_coil.jpg" width="600" />
 </p>
@@ -144,16 +144,17 @@ To prevent overheating of your motors (and then, their durability), it is necess
 This stepper driver allows tuning of the maximum current as explained here [https://www.rototron.info/raspberry-pi-stepper-motor-tutorial/] or here [https://lastminuteengineers.com/a4988-stepper-motor-driver-arduino-tutorial/] in order to protect your board of destructive voltage spikes.
 My protocol is:
 - Set the current limit by measuring the voltage (Vref) on the “ref” pin and the microstep pins disconnected. 
-- Take a look at the datasheet for your stepper motor and specially the rated current. In our case we are using NEMA 17 200 steps/rev, 12V 350mA.
+- Take a look at the datasheet for your stepper motor and specially the rated current.
 - Measure the voltage (Vref) on the metal trimmer pot itself while you adjust it. 
 - Adjust the Vref voltage using the formula:
 ```
 Current Limit = Vref x 2.5
 ```
-In our case, the motor is rated for 350mA, and the reference voltage is fixed to 0.14 V.
+In our case, the motor is rated for 400mA, and the reference voltage is fixed to 0.16 V.
 ```
-V_ref = 0.14 V
+V_ref = 0.4 / 2.5 =  0.16 V
 ```
+Generally, if the motors are noisy, too hot while stepping or missing steps that means the current limiting is set incorrectly. 
 
 ### Simple test to control Stepper Motor and spin Direction
 Arduino code (see 'Rotation_stepper_simple' folder):
@@ -210,7 +211,7 @@ void loop()
   delay(1000); // Wait a second
 }
 ```
-Be sure after few minutes, the motor is not too hot and no steps are missing during rotation (i.e.: if the rotation is not equal to 360°).
+Make sure after few minutes that the motor temperature is fine and that no steps have been missed during the rotation (i.e.: the full rotation needs to be equal to 360°).
 
 
 ## Software
@@ -239,7 +240,7 @@ Theta position (°) Phi position (°) Distance (cm)
 ...
 ```
 ##### Explore different configurations
-We designed four modes of configuration for our LIDAR system:
+We designed four modes of configuration for our mapping system:
 - The test configuration (T) where motors make a movement of 180 degrees in theta and 90 degrees in phi direction. It’s useful to check if your board and the microstepping is correctly connected.
 - A fast cartography (F), where you measure distance from the dome according a 180-degree angle in the theta direction. 
 - A full and precise (P for precise) cartography of space, which means 360 degrees over theta and 90 degrees over phi.
@@ -248,8 +249,8 @@ These modes can be directly called by X, F,  P  or T characters in the baud of a
 
 ### Python code
 #### Third-party dependencies: Packages and librairies
-To provide a visual interface to our cartography, we decide to use a python interface. The reason to do that is mainly because is highly extensible [https://en.wikipedia.org/wiki/Zen_of_Python] and commonly used in Science or Engineering.
-Our python codes will command the configuration needed by sending the character X, T, F or P and read every values in the baud port. One important point to be stressed is the difficulty for matplotlib to display a figure at high speed rate, typically at more than 10 figures per second. In order to display the distance as fast as we can, we decided to use pyqtgraph packages [http://www.pyqtgraph.org/]. 
+To provide a visual interface to our cartography, we decide to use a *python interface*. The reason to do that is mainly because *python* is highly extensible [https://en.wikipedia.org/wiki/Zen_of_Python] and commonly used in Science or Engineering.
+The python codes will command the configuration needed by sending the character X, T, F or P and read every values in the baud port. One important point to be stressed is the difficulty for matplotlib to display a figure at high speed rate, typically at more than 10 figures per second. In order to display the distance as fast as we can, we decided to use pyqtgraph packages [http://www.pyqtgraph.org/]. 
 To run these scripts, the easiest way is to create a virtual conda environment [https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html] with all packages required.
 To install theses packages, you have two option, load our environment here and use the command:
 ```
@@ -276,14 +277,14 @@ In your python environment, use the command:
 ```
 python plot_2d_radar_vXXX.py
 ```
-Here, your LIDAR is gathering distance at every angles defined by the motor in theta direction and display it in real time. To **shutdown** your measure, hit **Ctrl+C** in your console. That will close the baud and let motors going to initial positions.
+Here, your mapping system is gathering distance at every angles defined by the motor in theta direction and display it in real time. To **shutdown** your measure, hit **Ctrl+C** in your console. That will close the baud and let motors going to initial positions.
 
 ### 3D scanning
 In your python environment, use the command:
 ```
 python plot_3d_animation_vXX.py
 ```
-Here, your LIDAR is gathering distance at every angles defined by the motor in theta direction and phi direction, but save theses informations in a csv file. Once you have finished the cartography or decided to cancel it (by Ctrl + C), the cartography is displayed on a matplotlib window and on a gif in your directory file.
+Here, your mapping system is gathering distance at every angles defined by the motor in theta direction and phi direction, but save theses informations in a csv file. Once you have finished the cartography or decided to cancel it (by Ctrl + C), the cartography is displayed on a matplotlib window and on a gif in your directory file.
 
 ### Well-known bugs
 #### Stepper motor is not actually moving correctly.
