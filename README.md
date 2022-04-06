@@ -1,8 +1,8 @@
 # PinAr_Lidar
 
 <p float="left">
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif" height="400" />
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_3D_plot_v01.gif" height="400" /> 
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_2D_plot_v01.gif" height="300" />
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Examples/animation_gif_3D_plot_v01.gif" height="300" /> 
 </p>
 
 
@@ -104,8 +104,8 @@ A4988 (#1)   Arduino   Power supply
        GND - GND
        MS1 - DG44
        MS2 - DG46
-      STEP - PWM5
-       DIR - PWM6
+      STEP - PWM6
+       DIR - PWM5
 ```
 ```
 A4988 (#2)   Arduino   Power supply
@@ -114,8 +114,8 @@ A4988 (#2)   Arduino   Power supply
        GND -         - GND
        VDD - 5V
        GND - GND
-       MS1 - DG26
-       MS2 - DG24
+       MS1 - DG24
+       MS2 - DG26
       STEP - PWM3
        DIR - PWM4
 ```
