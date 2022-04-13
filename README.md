@@ -94,7 +94,7 @@ The resolution of the system can be tune by MS1, MS2 and MS3 pins as follow [htt
 As an example, when MS1 and MS2 are connected and not the MS3, the stepping step will be multiply by a factor 8.
  
 ### Wiring
-Concerning the circuit, the 1A and 1B pins will be connected to the first coil of the motor and the 2A and 2B pins to the second. To protect the microstepper driver from voltages spikes, a capacitor (100 µF) is used here. The pin of step and direction of the first stepper driver are connected to the 3 and 4 pins of the Arduino board. For the second stepper driver, they are connected to pins 6 and 7. For both of them, the reset and sleep pins are need to be pulled high (default low are to reset and sleep). Finally, the sensors is directly connected to SCL and SDA pins.
+Concerning the circuit, the 1A and 1B pins will be connected to the first coil of the motor and the 2A and 2B pins to the second. To protect the microstepper driver from voltages spikes, a capacitor (100 µF) is used here. The pin of step and direction of the first stepper driver are connected to the 3 and 4 pins of the Arduino board. For the second stepper driver, they are connected to pins 6 and 5. For both of them, the reset and sleep pins are need to be pulled high (default low are to reset and sleep). Finally, the sensors is directly connected to SCL and SDA pins.
 ```
 A4988 (#1)   Arduino   Power supply
 ----------   -------   ------------
@@ -318,4 +318,6 @@ TODO
 - On fresh ubuntu installation, you may experience minor problems with fresh ubuntu installation, that can fixed following this [https://askubuntu.com/questions/1056314/uploading-code-to-arduino-gives-me-the-error-avrdude-ser-open-cant-open-d].
     
 ### Future improvements
-TODO
+⋅⋅* Use enable pin of A4988 to reduce power consumption.
+⋅⋅* Use battery as power supply ?
+⋅⋅* Use a Bluetooth module to replace the wired connection for transmitting serial data.
