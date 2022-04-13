@@ -7,7 +7,7 @@
 
 
 <p float="center">
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/picture_dome_step_03.jpg" width="600" />
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/picture_PCB_and_dome.jpg" width="600" />
 </p>
 
 ## Introduction
