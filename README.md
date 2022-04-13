@@ -248,7 +248,7 @@ So, during this test, you may have seen in the monitor, information about angle 
 Theta position (°) Phi position (°) Distance (cm)
 ```
 16.0		00.0 		225.0
-16.0		01.8 		225.0
+16.0		00.9 		201.0
 ...
 ```
 ##### Explore different configurations
@@ -257,7 +257,7 @@ We designed four modes of configuration for our mapping system:
 - A fast cartography (F), where you measure distance from the dome according a 180-degree angle in the theta direction. 
 - A full and precise (P for precise) cartography of space, which means 360 degrees over theta and 90 degrees over phi.
 - The shutdown mode (X) where two steppers will return to the starting position.
-These modes can be directly called by X, F,  P  or T characters in the baud of arduino.
+These modes can be directly called by X, F, P or T characters in the baud of arduino.
 
 ### Python code
 #### Third-party dependencies: Packages and librairies
