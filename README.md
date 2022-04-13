@@ -163,6 +163,10 @@ This dome use a reduction gear and the big gear has six times the diameter of th
 360 steps = 360 / resolution * gear = 360 / 0.9 * 6 = 2400
 ````
 
+### First integration
+![Integration](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/picture_PCB_integration.jpg)
+
+
 ### Simple test to control Stepper Motor and spin Direction
 This code will also help you to fix the delay during the stepping process.
 Arduino code (see 'Rotation_stepper_simple' folder):
