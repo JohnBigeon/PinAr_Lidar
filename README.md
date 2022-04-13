@@ -318,6 +318,6 @@ TODO
 - On fresh ubuntu installation, you may experience minor problems with fresh ubuntu installation, that can fixed following this [https://askubuntu.com/questions/1056314/uploading-code-to-arduino-gives-me-the-error-avrdude-ser-open-cant-open-d].
     
 ### Future improvements
-⋅⋅* Use enable pin of A4988 to reduce power consumption.
-⋅⋅* Use battery as power supply ?
-⋅⋅* Use a Bluetooth module to replace the wired connection for transmitting serial data.
+* Use enable pin of A4988 to reduce power consumption.
+* Use battery as power supply ?
+* Use a Bluetooth module to replace the wired connection for transmitting serial data.
