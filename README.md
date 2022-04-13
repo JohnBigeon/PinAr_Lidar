@@ -72,10 +72,10 @@ Higher voltage supply allows for faster operation of the steppers, 24V is a comm
 ### Microstepping
 <p float="center">
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_pololu_A4988.jpg" width="400" />
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_schematic.png" width="400" style="background-color:white" />
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_schematic.png" width="400" />
 </p>
 <p float="center">
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_wiring.png" width="600" style="background-color:white" />
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_wiring.png" style="background-color:red;" />
 </p>
 
 The first part is to connect and interface stepper drivers (A4988) to the two stepper motors. These stepper motors are able to provide 400 steps per revolution with a resolution of 0.9°. Based on the nice tutorial found here [https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/], the use of the A4988 stepper driver gives you higher resolution of stepping.
