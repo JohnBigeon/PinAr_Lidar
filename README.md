@@ -75,6 +75,7 @@ Higher voltage supply allows for faster operation of the steppers, 24V is a comm
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_schematic.png" width="400" />
 </p>
 <p float="center">
+<body style="background-color:powderblue;">
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_wiring.png?raw=true" />
 </p>
 
