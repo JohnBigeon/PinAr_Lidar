@@ -22,6 +22,11 @@ First answer, because a dome security camera is designed to monitor a wide range
 ## Concept
 From a pedagogical perspective, let’s start with a static problem. To make a long story short, a TOF setup calculates the distance to an object using time of flight. The time-of-flight principle is based on the time difference between the emission of a signal and its return to the sensor, after being reflected by an object, as presented below. Practically speaking, when a light is emitted from the source, this light will travel through the air until it hits an obstacle which reflects this light. In this case, the time between the emission and the reception is directly related to the distance.
 
+<p float="center">
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/time_of_flight_principle_lightmode.png#gh-light-mode-only)"/>
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/time_of_flight_principle_darkmode.png#gh-dark-mode-only)"/>
+</p>
+
 ![concept](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/time_of_flight_principle_lightmode.png#gh-light-mode-only)
 ![concept](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/time_of_flight_principle_darkmode.png#gh-darmode-mode-only)
 
@@ -78,7 +83,6 @@ Higher voltage supply allows for faster operation of the steppers, 24V is a comm
 <p float="center">
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_wiring_lightmode.png#gh-light-mode-only)"/>
   <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/microstepping_wiring_darkmode.png#gh-dark-mode-only)"/>
-
 </p>
 
 The first part is to connect and interface stepper drivers (A4988) to the two stepper motors. These stepper motors are able to provide 400 steps per revolution with a resolution of 0.9°. Based on the nice tutorial found here [https://howtomechatronics.com/tutorials/arduino/how-to-control-stepper-motor-with-a4988-driver-and-arduino/], the use of the A4988 stepper driver gives you higher resolution of stepping.
