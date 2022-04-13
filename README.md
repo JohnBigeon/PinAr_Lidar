@@ -314,8 +314,8 @@ TODO
 #### Problem to upload the arduino code to your board
 - Carefully use the good board type & port in the menu of the Arduino IDE.
 
-##### Uploading code to arduino gives me errors
-- On fresh ubuntu installation, you may experience minor problems with fresh ubuntu installation, that can fixed following this [https://askubuntu.com/questions/1056314/uploading-code-to-arduino-gives-me-the-error-avrdude-ser-open-cant-open-d].
+#### Uploading code to arduino gives me errors
+- On fresh ubuntu installation, you may experience minor problems, that can fixed following this [https://askubuntu.com/questions/1056314/uploading-code-to-arduino-gives-me-the-error-avrdude-ser-open-cant-open-d].
     
 ### Future improvements
 * Use enable pin of A4988 to reduce power consumption.
