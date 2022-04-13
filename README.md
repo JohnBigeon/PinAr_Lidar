@@ -23,12 +23,9 @@ First answer, because a dome security camera is designed to monitor a wide range
 From a pedagogical perspective, let’s start with a static problem. To make a long story short, a TOF setup calculates the distance to an object using time of flight. The time-of-flight principle is based on the time difference between the emission of a signal and its return to the sensor, after being reflected by an object, as presented below. Practically speaking, when a light is emitted from the source, this light will travel through the air until it hits an obstacle which reflects this light. In this case, the time between the emission and the reception is directly related to the distance.
 
 <p float="center">
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/time_of_flight_principle_lightmode.png#gh-light-mode-only)"/>
-  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/time_of_flight_principle_darkmode.png#gh-dark-mode-only)"/>
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/time_of_flight_principle_lightmode.png#gh-light-mode-only"/>
+  <img src="https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/time_of_flight_principle_darkmode.png#gh-dark-mode-only"/>
 </p>
-
-![concept](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/time_of_flight_principle_lightmode.png#gh-light-mode-only)
-![concept](https://github.com/JohnBigeon/PinAr_Lidar/blob/main/Documentation/time_of_flight_principle_darkmode.png#gh-darmode-mode-only)
 
 Now, aim this source all around you at equally spaced intervals in both the zenithal (theta) and azimuthal (Phi) directions and you can fully determine the distance of objects around you. This is how most of Laser imaging, detection, and ranging (LIDAR) [https://en.wikipedia.org/wiki/Lidar] cartography is done.
 
