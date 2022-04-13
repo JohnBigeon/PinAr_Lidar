@@ -17,8 +17,6 @@ The first question: *Why “hack” a dome camera ?*
 
 First answer, because a dome security camera is designed to monitor a wide range of angles (+/- 360° and +/- 180°). When you open it, you can find two stepper motors with belts, pulleys, and sprockets. All the mechanical parts can be easily hacked to use them as a base for your 2D positionning during cartography of your environment. Second answer, and maybe the best one, this dome was destined for the trash can. In other words, we decide to give a new life to something that will eventually be destroyed.
 
-~~We have developed this LIDAR as a “popular science project” within the Foton laboratory. This project is an integral part of “Fete de la science” [https://www.fetedelascience.fr/], a Science Festival organized in France every year. During these days, the concept is simple, open our academic labs to the public.~~
-
 ## Concept
 From a pedagogical perspective, let’s start with a static problem. To make a long story short, a TOF setup calculates the distance to an object using time of flight. The time-of-flight principle is based on the time difference between the emission of a signal and its return to the sensor, after being reflected by an object, as presented below. Practically speaking, when a light is emitted from the source, this light will travel through the air until it hits an obstacle which reflects this light. In this case, the time between the emission and the reception is directly related to the distance.
 
