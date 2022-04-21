@@ -237,7 +237,7 @@ The arduino has been tested on arduino-1.8.19 for ubuntu and *arduino-XXX* for W
 Use the Library Manager to install the library *VL53L0X by Pololu (version 1.3.0)* [https://github.com/pololu/vl53l0x-arduino] on the  Arduino Software (IDE).
 
 #### First test
-Once the arduino code is uploaded to the board, open your Serial Monitor and you should see something like that:
+Once the arduino code (folder *Arduino_code*) is uploaded to the board, open your Serial Monitor and you should see something like that:
 ```
 Welcome aboard to Air PinAr_Lidar, 3D positioning
 Ignition, what is my purpose ?
