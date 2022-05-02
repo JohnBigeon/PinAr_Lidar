@@ -41,15 +41,14 @@ String action;   //Declare a String variable to hold your name
 //==============================================================================
 // For stepper 1
 //#define pin1Enable 13 // Activation du driver/pilote
-#define pin1Step    5   // Step
-#define pin1Dir     6   // Direction 
+#define pin1Step    3   // Step
+#define pin1Dir     4   // Direction 
 #define pin1MS1     44
 #define pin1MS2     46
 
 // For stepper 2
-//#define pin2Enable 13 // Activation du driver/pilote
-#define pin2Step    3   // Step
-#define pin2Dir     4   // Direction 
+#define pin2Step    6   // Step
+#define pin2Dir     5   // Direction 
 #define pin2MS1     26
 #define pin2MS2     24
 
